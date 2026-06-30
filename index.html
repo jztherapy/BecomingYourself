@@ -268,19 +268,41 @@ nav{
 /* ══ VIDEO SECTION ══════════════════════════════════ */
 .video-section{background:var(--warm);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist);padding:80px 5%}
 .video-intro{text-align:center;margin-bottom:44px}
-/* 16:9 responsive container — no extra card padding, video fills its frame directly */
-.video-wrap{
+
+/* Clean click-to-play video — no card box, just the frame itself */
+.video-player{
   max-width:860px;margin:0 auto;
   position:relative;width:100%;
-  padding-top:56.25%; /* 9/16 = 56.25% */
-  border-radius:12px;overflow:hidden;
-  box-shadow:0 20px 64px rgba(44,62,74,0.18);
-  background:#000;
+  padding-top:56.25%; /* 16:9 */
+  border-radius:14px;overflow:hidden;
+  box-shadow:0 24px 70px rgba(44,62,74,0.22);
+  cursor:pointer;background:#000;
 }
-.video-wrap iframe{
-  position:absolute;top:0;left:0;
-  width:100%;height:100%;
-  border:none;display:block;
+.video-poster{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 18%;
+  display:block;
+}
+.video-poster-tint{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(44,62,74,0.15) 0%,rgba(44,62,74,0.35) 100%);
+  transition:background 0.25s;
+}
+.video-player:hover .video-poster-tint{background:linear-gradient(180deg,rgba(44,62,74,0.1) 0%,rgba(44,62,74,0.25) 100%)}
+.video-play-btn{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:78px;height:78px;border-radius:50%;
+  background:rgba(255,255,255,0.95);
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--slate);
+  box-shadow:0 8px 28px rgba(0,0,0,0.25);
+  transition:transform 0.22s, background 0.22s;
+}
+.video-play-btn svg{margin-left:4px}
+.video-player:hover .video-play-btn{transform:translate(-50%,-50%) scale(1.08);background:#fff}
+.video-player iframe{
+  position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block;
 }
 
 /* ══ PAGE HEROES ════════════════════════════════════ */
@@ -440,7 +462,7 @@ footer{background:var(--slate);color:rgba(255,255,255,0.55);padding:60px 5% 36px
         <a href="https://jeffrey-zeth.clientsecure.me" target="_blank" rel="noopener" class="btn btn-sage">Book a Free Consultation</a>
         <a href="#" class="btn btn-outline-white" onclick="go('emdr')">Explore My Work</a>
       </div>
-      <a href="#" class="hero-video-hint" onclick="document.querySelector('.video-section').scrollIntoView({behavior:'smooth'});return false;">▶ Watch the intro video</a>
+      <a href="#" class="hero-video-hint" onclick="document.querySelector('.video-section').scrollIntoView({behavior:'smooth'});setTimeout(playHeroVideo,500);return false;">▶ Watch the intro video</a>
     </div>
   </div>
 
@@ -475,7 +497,7 @@ footer{background:var(--slate);color:rgba(255,255,255,0.55);padding:60px 5% 36px
     </div>
   </section>
 
-  <!-- WATCH THE VIDEO (clickable, with controls) -->
+  <!-- WATCH THE VIDEO — click-to-play, no card framing -->
   <div class="video-section">
     <div class="inner">
       <div class="video-intro reveal">
@@ -483,13 +505,12 @@ footer{background:var(--slate);color:rgba(255,255,255,0.55);padding:60px 5% 36px
         <h2 class="s-h2" style="color:var(--slate);text-align:center">A few minutes with Jeffrey</h2>
         <p class="s-body" style="text-align:center;max-width:520px;margin:0 auto">Get a sense of who I am and how I work before we even speak.</p>
       </div>
-      <div class="video-wrap reveal" style="margin-top:40px">
-        <iframe
-          src="https://player.vimeo.com/video/1136269886?color=7A9E8E&title=0&byline=0&portrait=0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-          title="Jeffrey Zeth LCSW — Introduction video">
-        </iframe>
+      <div class="video-player reveal" id="videoPlayer" style="margin-top:40px" onclick="playHeroVideo()">
+        <img src="jeffrey-zeth-headshot.png" alt="" class="video-poster">
+        <div class="video-poster-tint"></div>
+        <button class="video-play-btn" aria-label="Play introduction video" type="button">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -769,6 +790,13 @@ footer{background:var(--slate);color:rgba(255,255,255,0.55);padding:60px 5% 36px
 </footer>
 
 <script>
+function playHeroVideo() {
+  var wrap = document.getElementById('videoPlayer');
+  if (!wrap || wrap.querySelector('iframe')) return;
+  wrap.innerHTML = '<iframe src="https://player.vimeo.com/video/1136269886?autoplay=1&title=0&byline=0&portrait=0&color=7A9E8E" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Jeffrey Zeth LCSW — Introduction video"></iframe>';
+  wrap.style.cursor = 'default';
+}
+
 function go(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
