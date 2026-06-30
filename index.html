@@ -143,19 +143,14 @@ nav{
   display:flex;align-items:center;justify-content:center;
   background:var(--slate);overflow:hidden;
 }
-/* Responsive video covering */
-.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--slate)}
-.hero-video-wrap iframe{
-  position:absolute;
-  top:50%;left:50%;
+/* Responsive photo covering */
+.hero-photo-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--slate)}
+.hero-photo-wrap .hero-photo{
   width:100%;
   height:100%;
-  /* Oversize + scale to guarantee full bleed coverage with no edge gaps */
-  min-width:100vw;
-  min-height:100vh;
-  transform:translate(-50%,-46%) scale(1.35);
-  border:none;pointer-events:none;
-  background:var(--slate);
+  object-fit:cover;
+  object-position:center 22%;
+  display:block;
 }
 .hero-overlay{
   position:absolute;inset:0;z-index:1;
@@ -180,6 +175,13 @@ nav{
   line-height:1.7;max-width:560px;margin:0 auto 40px;
 }
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-video-hint{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:32px;font-size:14px;letter-spacing:0.04em;
+  color:rgba(255,255,255,0.75);text-decoration:none;
+  transition:color 0.2s;
+}
+.hero-video-hint:hover{color:#fff}
 
 /* ══ BUTTONS ════════════════════════════════════════ */
 .btn{
@@ -420,15 +422,10 @@ footer{background:var(--slate);color:rgba(255,255,255,0.55);padding:60px 5% 36px
 ══════════════════════════════════════════════════ -->
 <div id="home" class="page active">
 
-  <!-- HERO with background video -->
+  <!-- HERO with photo background -->
   <div class="hero" role="banner">
-    <div class="hero-video-wrap" aria-hidden="true">
-      <iframe
-        src="https://player.vimeo.com/video/1136269886?autoplay=1&muted=1&loop=1&background=1&playsinline=1&dnt=1"
-        allow="autoplay; fullscreen; picture-in-picture"
-        title="Becoming Yourself intro video — background"
-        style="background:#2C3E4A;">
-      </iframe>
+    <div class="hero-photo-wrap" aria-hidden="true">
+      <img src="jeffrey-zeth-headshot.png" alt="" class="hero-photo">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -442,6 +439,7 @@ footer{background:var(--slate);color:rgba(255,255,255,0.55);padding:60px 5% 36px
         <a href="https://jeffrey-zeth.clientsecure.me" target="_blank" rel="noopener" class="btn btn-sage">Book a Free Consultation</a>
         <a href="#" class="btn btn-outline-white" onclick="go('emdr')">Explore My Work</a>
       </div>
+      <a href="#" class="hero-video-hint" onclick="document.querySelector('.video-section').scrollIntoView({behavior:'smooth'});return false;">▶ Watch the intro video</a>
     </div>
   </div>
 
