@@ -144,16 +144,16 @@ nav{
   background:var(--slate);overflow:hidden;
 }
 /* Responsive video covering */
-.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--slate)}
 .hero-video-wrap iframe{
   position:absolute;
-  top:42%;left:50%;
-  /* 16:9 cover trick — anchored slightly above center so subject's head isn't cropped */
-  width:100vw;
-  height:56.25vw; /* 100/16*9 */
-  min-height:100%;
-  min-width:177.78vh; /* 100/9*16 */
-  transform:translate(-50%,-42%);
+  top:50%;left:50%;
+  width:100%;
+  height:100%;
+  /* Oversize + scale to guarantee full bleed coverage with no edge gaps */
+  min-width:100vw;
+  min-height:100vh;
+  transform:translate(-50%,-46%) scale(1.18);
   border:none;pointer-events:none;
 }
 .hero-overlay{
