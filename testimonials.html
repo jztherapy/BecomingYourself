@@ -3,216 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Stories — Becoming Yourself Counseling</title>
+
+<title>Client Stories — Becoming Yourself Counseling | Jeffrey Zeth, LCSW</title>
+<meta name="description" content="Unsolicited reflections from former clients of Jeffrey Zeth, LCSW — on panic, life transitions, EMDR therapy, and men's work. Brooklyn, NY.">
+<meta name="keywords" content="therapist reviews Brooklyn, EMDR client stories, men's counseling testimonials, Jeffrey Zeth reviews">
+<meta name="author" content="Jeffrey Zeth, LCSW">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://becomingyourself.nyc/testimonials.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://becomingyourself.nyc/testimonials.html">
+<meta property="og:title" content="Client Stories — Becoming Yourself Counseling">
+<meta property="og:description" content="Unsolicited reflections from former clients of Jeffrey Zeth, LCSW.">
+<meta property="og:image" content="https://becomingyourself.nyc/jeffrey-zeth-headshot.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Client Stories — Becoming Yourself Counseling">
+<meta name="twitter:description" content="Unsolicited reflections from former clients of Jeffrey Zeth, LCSW.">
+<meta name="twitter:image" content="https://becomingyourself.nyc/jeffrey-zeth-headshot.jpg">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
 <style>
-  /* Base & Reset */
-  *, *::before, *::after {
-    box-sizing: border-box;
+  /* Page-specific: editorial testimonial layout */
+  .testimonials-flow{max-width:720px;margin:56px auto 0}
+
+  .testimonial-entry{
+    padding:0 0 56px;
+    margin-bottom:56px;
+    border-bottom:1px solid var(--mist);
   }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    color: #2b2b2b;
-    line-height: 1.6;
-    background-color: #ffffff;
+  .testimonial-entry:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+
+  .testimonial-mark{
+    font-family:'Cormorant Garamond',serif;
+    font-size:64px;font-weight:500;color:var(--sage);
+    line-height:1;margin-bottom:4px;opacity:0.55;
   }
 
-  /* Container */
-  .page-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 80px 24px;
+  .testimonial-quote{
+    font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;
+    font-style:italic;line-height:1.55;color:var(--slate);
+    margin-bottom:20px;
   }
 
-  /* Header Section */
-  .section-header {
-    text-align: center;
-    margin-bottom: 70px;
+  .testimonial-attribution{
+    display:flex;align-items:center;gap:12px;
+  }
+  .testimonial-attribution .dash{
+    width:28px;height:1.5px;background:var(--sage);display:inline-block;
+  }
+  .client-name{font-weight:600;color:var(--slate);font-size:15px}
+  .client-focus{
+    font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--stone);font-weight:500;
   }
 
-  .section-header h1 {
-    font-size: 2.5rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #1a1a1a;
-    margin-bottom: 16px;
+  .ethics-note{
+    font-size:14px;color:var(--stone);text-align:center;
+    max-width:600px;margin:8px auto 0;line-height:1.7;
   }
 
-  .section-header p {
-    font-size: 1.15rem;
-    color: #555555;
-    max-width: 600px;
-    margin: 0 auto;
-    font-weight: 300;
-  }
-
-  /* Testimonials List Layout */
-  .testimonials-list {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    margin-bottom: 60px;
-  }
-
-  .testimonial-item {
-    padding: 40px;
-    background-color: #faf9f6; /* Soft, warm neutral background */
-    border-radius: 4px;
-    border-left: 3px solid #333333;
-  }
-
-  .testimonial-quote {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #333333;
-    margin-bottom: 24px;
-    line-height: 1.7;
-  }
-
-  .testimonial-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-top: 1px solid #e5e3de;
-    padding-top: 16px;
-  }
-
-  .client-identifier {
-    font-weight: 500;
-    color: #1a1a1a;
-    font-size: 0.95rem;
-  }
-
-  .focus-area {
-    font-size: 0.85rem;
-    color: #666666;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-
-  /* Confidentiality Note */
-  .ethics-note {
-    font-size: 0.85rem;
-    color: #777777;
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 70px auto;
-    line-height: 1.5;
-  }
-
-  /* Call to Action Box */
-  .consultation-cta {
-    text-align: center;
-    background-color: #f4f3ef;
-    padding: 60px 32px;
-    border-radius: 4px;
-  }
-
-  .consultation-cta h2 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: #1a1a1a;
-    margin-top: 0;
-    margin-bottom: 12px;
-  }
-
-  .consultation-cta p {
-    color: #555555;
-    margin-bottom: 28px;
-    font-size: 1.05rem;
-    font-weight: 300;
-  }
-
-  .cta-link {
-    display: inline-block;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 14px 32px;
-    border-radius: 2px;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    transition: background-color 0.2s ease;
-  }
-
-  .cta-link:hover {
-    background-color: #333333;
-  }
-
-  @media (max-width: 600px) {
-    .testimonial-meta {
-      flex-direction: column;
-      gap: 4px;
-    }
-    .page-container {
-      padding: 40px 16px;
-    }
+  @media(max-width:600px){
+    .testimonial-quote{font-size:22px}
+    .testimonial-entry{padding-bottom:40px;margin-bottom:40px}
   }
 </style>
 </head>
+
 <body>
 
-<main class="page-container">
+<nav role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html" aria-label="Becoming Yourself Counseling — Home">Becoming Yourself</a>
+  <ul class="nav-menu" role="menubar">
+    <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+    <li role="none"><a href="emdr.html" role="menuitem">EMDR Therapy</a></li>
+    <li role="none"><a href="mens-work.html" role="menuitem">Men's Work</a></li>
+    <li role="none"><a href="testimonials.html" role="menuitem" class="active">Client Stories</a></li>
+    <li role="none"><a href="https://jeffrey-zeth.clientsecure.me" target="_blank" rel="noopener" class="nav-book" role="menuitem">Book Free Consultation</a></li>
+  </ul>
+  <button class="hamburger" id="hbg" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <!-- Header -->
-  <header class="section-header">
-    <h1>Client Stories</h1>
-    <p>I do not ask for testimonials from my clients. However, I have permission to share the following statements which were sent to me, unsolicited, from former clients.</p>
-  </header>
+<div class="mobile-menu" id="mob" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="emdr.html">EMDR Therapy</a>
+  <a href="mens-work.html">Men's Work</a>
+  <a href="testimonials.html">Client Stories</a>
+  <a href="https://jeffrey-zeth.clientsecure.me" target="_blank" rel="noopener" class="m-book">Book Free Consultation</a>
+</div>
 
-  <!-- Testimonials Feed -->
-  <div class="testimonials-list">
-
-    <!-- Item 1 -->
-    <article class="testimonial-item">
-      <p class="testimonial-quote">
-        “I can't thank you enough. In my 'darkest' days, I'd just pray that the physical symptoms of my panic attacks would go away, because I felt that if they did, I could manage life as it came. You helped me get there…I still have challenges and struggles, and as I get older, I will have more, but for the first time, I feel like I've got this….Please continue to do great work.” 
-      </p>
-      <div class="testimonial-meta">
-        <span class="client-identifier">Frank</span>
-        <span class="focus-area">Life Transitions</span>
-      </div>
-    </article>
-
-    <!-- Item 2 -->
-    <article class="testimonial-item">
-      <p class="testimonial-quote">
-        “Thank you for the session tonight. That was really helpful. After we finished, I found I was able to move ahead and get a lot of work done tonight, as I had been really blocked and overwhelmed for a few days…I think your work with me released me from something holding me back and made that possible.”
-      </p>
-      <div class="testimonial-meta">
-        <span class="client-identifier">Alexandra</span>
-        <span class="focus-area">EMDR Therapy</span>
-      </div>
-    </article>
-
-    <!-- Item 3 -->
-    <article class="testimonial-item">
-      <p class="testimonial-quote">
-        “Participating in men's work offered a rare, grounded space to examine expectations I didn't even realize I was carrying. It has transformed how I connect with myself and the people around me.”
-      </p>
-      <div class="testimonial-meta">
-        <span class="client-identifier">J. S.</span>
-        <span class="focus-area">Men's Work</span>
-      </div>
-    </article>
-
+<div class="page-hero page-hero-sage">
+  <div class="inner">
+    <span class="s-label">In Their Own Words</span>
+    <h1 class="s-h2" style="font-size:clamp(32px,4.5vw,52px)">Client Stories</h1>
+    <p>I do not ask for testimonials from my clients. However, I have permission to share the following statements, sent to me unsolicited by former clients.</p>
   </div>
+</div>
 
-  <!-- Ethics & Privacy Disclaimer -->
-  <div class="ethics-note">
-    <em>Note on Confidentiality:</em> To protect privacy and adhere to clinical ethics, all reflections are shared with explicit permission, and identifying details have been modified.
+<section class="section" style="background:var(--cream)">
+  <div class="inner">
+    <div class="testimonials-flow">
+
+      <article class="testimonial-entry reveal">
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-quote">I can't thank you enough. In my 'darkest' days, I'd just pray that the physical symptoms of my panic attacks would go away, because I felt that if they did, I could manage life as it came. You helped me get there&hellip;I still have challenges and struggles, and as I get older, I will have more, but for the first time, I feel like I've got this&hellip;.Please continue to do great work.</p>
+        <div class="testimonial-attribution">
+          <span class="client-name">Frank</span>
+          <span class="dash"></span>
+          <span class="client-focus">Life Transitions</span>
+        </div>
+      </article>
+
+      <article class="testimonial-entry reveal">
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-quote">Thank you for the session tonight. That was really helpful. After we finished, I found I was able to move ahead and get a lot of work done tonight, as I had been really blocked and overwhelmed for a few days&hellip;I think your work with me released me from something holding me back and made that possible.</p>
+        <div class="testimonial-attribution">
+          <span class="client-name">Alexandra</span>
+          <span class="dash"></span>
+          <span class="client-focus">EMDR Therapy</span>
+        </div>
+      </article>
+
+      <article class="testimonial-entry reveal">
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-quote">Participating in men's work offered a rare, grounded space to examine expectations I didn't even realize I was carrying. It has transformed how I connect with myself and the people around me.</p>
+        <div class="testimonial-attribution">
+          <span class="client-name">J. S.</span>
+          <span class="dash"></span>
+          <span class="client-focus">Men's Work</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="ethics-note"><em>Note on Confidentiality:</em> To protect privacy and adhere to clinical ethics, all reflections are shared with explicit permission, and identifying details have been modified.</p>
   </div>
+</section>
 
-  <!-- Forward Motion / CTA -->
-  <section class="consultation-cta">
-    <h2>Forward Motion</h2>
-    <p>Every journey begins with a single step. A free 20-minute consultation — no pressure, no commitment.</p>
-    <a href="#consultation" class="cta-link">Book Free Consultation</a>
-  </section>
+<div class="cta-band">
+  <div class="inner reveal">
+    <span class="s-label">Forward Motion</span>
+    <h2 class="s-h2">Every journey begins with a single step.</h2>
+    <p>A free 20-minute consultation — no pressure, no commitment. Just a conversation.</p>
+    <a href="https://jeffrey-zeth.clientsecure.me" target="_blank" rel="noopener" class="btn btn-sage">Book Free Consultation</a>
+  </div>
+</div>
 
-</main>
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Becoming Yourself Counseling</div>
+      <p class="footer-desc">Individual therapy and EMDR for adults navigating life transitions, trauma, and questions of identity and purpose. Brooklyn, NY &amp; telehealth.</p>
+      <a href="mailto:jeffrey.zeth@gmail.com" class="footer-email">jeffrey.zeth@gmail.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="emdr.html">EMDR Therapy</a></li>
+        <li><a href="mens-work.html">Men's Work</a></li>
+        <li><a href="testimonials.html">Client Stories</a></li>
+        <li><a href="https://jeffrey-zeth.clientsecure.me" target="_blank" rel="noopener">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="https://jeffrey-zeth.clientsecure.me" target="_blank" rel="noopener">Book a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Jeffrey Zeth, LCSW · Becoming Yourself Counseling · Brooklyn, NY</span>
+    <span>Licensed Clinical Social Worker · New York State</span>
+  </div>
+</footer>
 
+<script src="site.js"></script>
 </body>
 </html>
