@@ -310,9 +310,19 @@ footer{background:var(--slate);color:rgba(255,255,255,0.55);padding:60px 5% 36px
 .reveal.visible{opacity:1;transform:none}
 
 /* ══ MOBILE ═════════════════════════════════════════ */
-@media(max-width:800px){
+/* The desktop nav needs ~1100px for the logo plus six items. Below that,
+   tighten the spacing first, then fall back to the hamburger — otherwise the
+   menu overflows the viewport and the booking button is cut off. */
+@media(max-width:1240px){
+  .nav-menu{gap:20px}
+  .nav-book{padding:10px 16px}
+}
+@media(max-width:1120px){
   .nav-menu{display:none}
   .hamburger{display:flex}
+}
+
+@media(max-width:800px){
 
   .section{padding:60px 6%}
   .stats-bar,.video-section,.buber{padding:52px 6%}
