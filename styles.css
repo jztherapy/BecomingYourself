@@ -52,7 +52,7 @@ nav{
 
 .mobile-menu{
   display:none;position:fixed;top:70px;left:0;right:0;
-  background:rgba(254,254,252,0.98);border-bottom:1px solid var(--mist);
+  background:var(--cream);border-bottom:1px solid var(--mist);
   padding:20px 6% 28px;z-index:998;flex-direction:column;
 }
 .mobile-menu.open{display:flex}
